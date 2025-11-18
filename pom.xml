@@ -130,6 +130,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>User Swagger Api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

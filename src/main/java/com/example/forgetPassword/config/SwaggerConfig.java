@@ -20,7 +20,7 @@ public class SwaggerConfig {
 
 	@Value("${prod.server-url}")
 	private String prodServerUrl;
-	
+
 	@Bean
 	OpenAPI forgetPasswordApplicationConfig() {
 
@@ -37,15 +37,13 @@ public class SwaggerConfig {
 		License license = new License().name("MIT Licence").url("https://choosealicense.com/licenses/mit/");
 
 		Info info = new Info().title(title).version("1.0.0").contact(contact).description(title)
-				.description("The User Access API For Practice.")
-				.license(license);
-		
-		Components components=new Components()
-                .addSecuritySchemes("cookieAuth", new SecurityScheme()
-                        .type(SecurityScheme.Type.APIKEY)
-                        .in(SecurityScheme.In.COOKIE)
-                        .name("No Need to apply manually however backend was checking from it's cookie, signIn to access protected Api's."));
+				.description("The User Access API For Practice.").license(license);
 
-		return new OpenAPI().components(components).info(info).servers(List.of(prodServer, localServer)).paths(new Paths());
+		Components components = new Components().addSecuritySchemes("cookieAuth", new SecurityScheme()
+				.type(SecurityScheme.Type.APIKEY).in(SecurityScheme.In.COOKIE)
+				.name("No Need to apply manually however backend was checking from it's cookie, signIn to access protected Api's."));
+
+		return new OpenAPI().components(components).info(info).servers(List.of(prodServer, localServer))
+				.paths(new Paths());
 	}
 }

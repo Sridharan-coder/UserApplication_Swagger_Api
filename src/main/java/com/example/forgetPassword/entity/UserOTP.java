@@ -1,5 +1,7 @@
 package com.example.forgetPassword.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,4 +27,7 @@ public class UserOTP {
 
 	@Column(nullable = false)
 	private Integer otp;
+
+	@Column(nullable = false)
+	private Date intializedTime;
 }
