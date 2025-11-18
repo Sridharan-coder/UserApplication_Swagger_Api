@@ -46,7 +46,7 @@ import jakarta.servlet.http.HttpServletResponse;
 class UserDetailDAOImplementationTest {
 
 	@InjectMocks
-	private UserDetailDAOImplementation service; // The class you are testing
+	private UserDetailDAOImplementation service; // The class we are testing
 
 	@Mock
 	private AuthenticationManager authManager;
